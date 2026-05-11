@@ -18,8 +18,8 @@ import CompleteFramework.seleniumweb.TestComponents.BaseTest;
 
 public class ErrorValidation extends BaseTest {
 	
-	@FindBy(className="toast-bottom-right")
-	WebElement LoginError;
+//	@FindBy(className="toast-bottom-right")
+//	WebElement LoginError;
 
 	@Test
 	public void SubmitOrders() throws IOException {
@@ -34,7 +34,8 @@ public class ErrorValidation extends BaseTest {
 	
 
 		ProductCataloguePage productCataloguePage = landingPage.LoginApplication("somesh@gmail.com", "Wolverine@12345");
-		Assert.assertEquals(landingPage.getErrorMessage(),"Incorrect email or password.");
+		
+	Assert.assertEquals(landingPage.getErrorMessage(),"Incorrect email or password.");
 		
 		
 	

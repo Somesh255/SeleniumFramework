@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="CompleteFramework.seleniumweb.SubmitStandaloneTest">
+      <class name="CompleteFramework.seleniumweb.ForgotPasswordexe">
         <methods>
-          <include name="SubmitOrders"/>
+          <include name="ForgotPasswordexe"/>
           <include name="Teardown"/>
           <include name="LaunchApplication"/>
         </methods>
-      </class> <!-- CompleteFramework.seleniumweb.SubmitStandaloneTest -->
+      </class> <!-- CompleteFramework.seleniumweb.ForgotPasswordexe -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,5 +1,6 @@
 package CompleteFramework.seleniumweb.PageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,8 +38,13 @@ public class LandingPage extends AbstractComponents {
 //*	@FindBy(css="[class*='flyInOut']")
 //*	WebElement ErrorMessage;
 	
-	@FindBy(xpath="//div[contains(text(),'Incorrect email or password')]")
+	By errorMessage = By.cssSelector(".toast-message");
+
+	@FindBy(css=".toast-message")
 	WebElement LoginErrorMessage;
+	
+	@FindBy(className="forgot-password-link")
+	WebElement forgotPasswordLink;
 	
 	
 	public ProductCataloguePage LoginApplication(String email,String Password)
@@ -57,8 +63,22 @@ public class LandingPage extends AbstractComponents {
 		
 	}
 	
+	
+
+
 	public String getErrorMessage()
 	{
+		WaitforElementToAppear(errorMessage);
 	    return LoginErrorMessage.getText();
 	}
+	
+
+
+public ForgotPasswordPage ForgotPassword() {
+
+    forgotPasswordLink.click();
+
+    return new ForgotPasswordPage(driver);
+
+}
 }
