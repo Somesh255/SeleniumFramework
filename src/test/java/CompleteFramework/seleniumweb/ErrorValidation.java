@@ -17,21 +17,25 @@ import CompleteFramework.seleniumweb.PageObjects.ProductCataloguePage;
 import CompleteFramework.seleniumweb.TestComponents.BaseTest;
 
 public class ErrorValidation extends BaseTest {
+	
+	@FindBy(className="toast-bottom-right")
+	WebElement LoginError;
 
 	@Test
 	public void SubmitOrders() throws IOException {
 
-		String ProductName = "ZARA COAT 3";
-		String CountryName = "India";
+//		String ProductName = "ZARA COAT 3";
+//		String CountryName = "India";
 		
 
-		@FindBy(className="toast-bottom-right")
-		WebElement LoginError;
+	
 		
 		
 	
 
 		ProductCataloguePage productCataloguePage = landingPage.LoginApplication("somesh@gmail.com", "Wolverine@12345");
+		Assert.assertEquals(landingPage.getErrorMessage(),"Incorrect email or password.");
+		
 		
 	
 

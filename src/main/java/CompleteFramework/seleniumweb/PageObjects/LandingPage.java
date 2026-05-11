@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import CompleteFramework.seleniumweb.AbstractComp.AbstractComponents;
 
@@ -33,8 +34,11 @@ public class LandingPage extends AbstractComponents {
 	WebElement LoginButton;
 	
 	
-	@FindBy(css="[class*='flyInOut']")
-	WebElement ErrorMessage;
+//*	@FindBy(css="[class*='flyInOut']")
+//*	WebElement ErrorMessage;
+	
+	@FindBy(xpath="//div[contains(text(),'Incorrect email or password')]")
+	WebElement LoginErrorMessage;
 	
 	
 	public ProductCataloguePage LoginApplication(String email,String Password)
@@ -42,7 +46,7 @@ public class LandingPage extends AbstractComponents {
 		useremail.sendKeys(email);
 		passwordEle.sendKeys(Password);
 		LoginButton.click();
-		ProductCataloguePage ProductCataloguePage= new ProductCataloguePage(driver);
+	   ProductCataloguePage ProductCataloguePage= new ProductCataloguePage(driver);
 		return ProductCataloguePage;
 	}
 	
@@ -51,5 +55,10 @@ public class LandingPage extends AbstractComponents {
 	{
 		driver.get("https://rahulshettyacademy.com/client");
 		
+	}
+	
+	public String getErrorMessage()
+	{
+	    return LoginErrorMessage.getText();
 	}
 }
