@@ -1,6 +1,7 @@
 package CompleteFramework.seleniumweb;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Listeners;
 import org.testng.Assert;
 
 import java.io.IOException;
@@ -15,6 +16,7 @@ import CompleteFramework.seleniumweb.PageObjects.LandingPage;
 import CompleteFramework.seleniumweb.PageObjects.ProductCataloguePage;
 import CompleteFramework.seleniumweb.TestComponents.BaseTest;
 
+@Listeners(CompleteFramework.seleniumweb.Listeners.class)
 public class SubmitStandaloneTest extends BaseTest {
 
 	@Test

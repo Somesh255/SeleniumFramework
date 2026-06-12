@@ -27,14 +27,18 @@ public class AbstractComponents {
 	@FindBy(css="[routerlink*='cart']")
 	WebElement cartHeader;
 	
+	@FindBy(css=".ng-animating")
+	WebElement spinner;
+	
 	public void WaitforElementToAppear(By findby)
 	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(findby));
 		
 	}
 	
 	public CartPage goToCartPage() {
+	    WaitforElementToDisappear(spinner);
 		cartHeader.click();
 		CartPage cartpage=new CartPage(driver);
 		return cartpage;
@@ -43,7 +47,7 @@ public class AbstractComponents {
 	
 	public void WaitforElementToDisappear(WebElement ele)
 	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		wait.until(ExpectedConditions.invisibilityOf(ele));
 	
 	

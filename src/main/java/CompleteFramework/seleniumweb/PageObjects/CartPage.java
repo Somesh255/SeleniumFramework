@@ -10,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+
 import CompleteFramework.seleniumweb.AbstractComp.AbstractComponents;
 
 public class CartPage extends AbstractComponents {
@@ -38,10 +39,12 @@ public class CartPage extends AbstractComponents {
 	}
 	
 
-	
 	public CheckoutPage goToCheckout() {
-	Checkoutele.click();
-	return new CheckoutPage(driver);
+
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].click();", Checkoutele);
+
+	    return new CheckoutPage(driver);
 	}
 
 

@@ -32,6 +32,9 @@ WebElement ResetConfirmAddress;
 @FindBy(xpath="//button[@type='submit']")
 WebElement NewPasswordButton;
 
+
+@FindBy(xpath="//div[contains(text(),'User Not found.')]")
+WebElement errorMessage;
 	
   
 	 public void ResetPasswordPage(String Email, String Password, String ConfirmEmail) {
@@ -44,4 +47,11 @@ WebElement NewPasswordButton;
 
 	 }
 	 
+	 
+	 public String NotRegisteredValidationMessage() 
+	 {
+		return errorMessage.getText();
+	 }
+	 
 }
+

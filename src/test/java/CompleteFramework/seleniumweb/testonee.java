@@ -12,7 +12,7 @@ public class testonee {
 		
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver= new ChromeDriver();
-		driver.get("https://rahulshettyacademy.com/client");
+		
 
 	}
 

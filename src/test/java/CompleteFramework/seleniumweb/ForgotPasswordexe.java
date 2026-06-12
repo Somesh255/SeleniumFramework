@@ -1,5 +1,6 @@
 package CompleteFramework.seleniumweb;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import CompleteFramework.seleniumweb.PageObjects.ForgotPasswordPage;
@@ -16,9 +17,14 @@ public class ForgotPasswordexe extends BaseTest {
 		    landingPage.ForgotPassword();
 		    
 		    forgotPasswordPage.ResetPasswordPage("somesh26@gmail.com", "password@1", "password@1");
+		    
+		    
+		 Assert.assertEquals(forgotPasswordPage.NotRegisteredValidationMessage(),"User Not found.");
+		 
+		 
 		}
 
-
+           
 	}
 
 
